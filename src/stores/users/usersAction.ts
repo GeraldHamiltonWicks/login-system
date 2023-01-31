@@ -1,0 +1,2 @@
+export const CREATE_ONE_USER = 'CREATE_ONE_USER';
+export const DELETE_ONE_USER = 'DELETE_ONE_USER';

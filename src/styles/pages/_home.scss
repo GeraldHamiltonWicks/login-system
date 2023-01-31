@@ -1,0 +1,332 @@
+#home {
+  background-color: rgba(238, 238, 238, 1);
+  min-height: 100vh;
+
+  .navbar {
+    padding: 23px 40px;
+    display: flex;
+
+    .left-content {
+      width: 50%;
+
+      h2 {
+        @include setFont('Inter', 400, 32px);
+        color: white;
+        margin: 0;
+      }
+    }
+
+    .right-content {
+      display: flex;
+      width: 50%;
+      align-items: flex-end;
+      justify-content: end;
+      
+
+      .theme-action, .logout-action {
+        display: block;
+        text-align: center;
+        margin-left: 40px;
+        border-bottom: 3px solid transparent;
+
+        button {
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+        }
+
+        h5 {
+          color: white;
+          cursor: pointer;
+          @include setFont('Inter', 500, 16px);
+          margin: 0;
+          padding-bottom: 3px;
+        }
+
+        &:hover {
+          transition: 300ms;
+          border-bottom: 3px solid white;
+        }
+
+        &:not(:hover) {
+          transition: 300ms;
+        }
+      }
+
+      .theme-action {
+        position: relative;
+        margin-left: 0px;
+
+        .theme-selector {
+          background-color: white;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 0px 0px 20px 20px;
+          
+          padding: 10px 8px;
+          position: absolute;
+          top: 79px;
+          z-index: 2;
+          @include setInnerFadeIn(0.5s);          
+
+          div {
+
+            button {
+              border-radius: 100%;
+              border: 2px solid rgba(0, 0, 0, 0);
+              height: 36px;
+              width: 36px;
+              margin-bottom: 10px;
+              
+  
+              &:hover {
+                transition: 0.4;
+                border: 2px solid rgba(0, 0, 0, 0.5);
+              }
+            }
+  
+            .blue-theme {
+              background-color: $primary-blue-100;
+            }
+  
+            .yellow-theme {
+              background-color: $primary-yellow-100;
+            }
+  
+            .purple-theme {
+              background-color: $primary-purple-100;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-blue {
+    background-color: $primary-blue-100;
+  }
+
+  .navbar-yellow {
+    background-color: $primary-yellow-100;
+  }
+
+  .navbar-purple {
+    background-color: $primary-purple-100;
+  }
+
+  .add-note-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 40px;
+    text-align: center;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    position: relative;
+
+    div {
+      text-align: justify;
+
+      input {
+        border: 0;
+        border-radius: 20px 20px 0 0;
+        width: 259.2px;
+        @include setFont('Inter', 400, 24px);
+        width: 25rem;
+  
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+
+
+    textarea {
+      border: 0;
+      border-radius: 0 0 20px 20px;
+      resize: none;
+      @include setFont('Inter', 400, 24px);
+      height: 5rem;
+      width: 25rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      @include setFont('Inter', 400, 24px);
+      opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      @include setFont('Inter', 400, 24px);
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      @include setFont('Inter', 400, 24px);
+    }
+
+    button {
+      border: 0;
+      border-radius: 100%;
+      color: white;
+      @include setFont('Inter', 400, 32px);
+      text-align: center;
+      line-height: 16px;
+
+      padding: 0;
+      position: absolute;
+      right: 22px;
+      height: 36px;
+      width: 36px;     
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .add-note-card-blue {
+    button {
+      background-color: $primary-blue-100;
+      @include revertBackgroundOnHover(0.4s, $primary-blue-100, white);
+    }
+  }
+
+  .add-note-card-yellow {
+    button {
+      background-color: $primary-yellow-100;
+      @include revertBackgroundOnHover(0.4s, $primary-yellow-100, white);
+    }
+  }
+
+  .add-note-card-purple {
+    button {
+      background-color: $primary-purple-100;
+      @include revertBackgroundOnHover(0.4s, $primary-purple-100, white);
+    }
+  }
+
+  .notes-list {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+
+    .note-item {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      @include setInnerFadeIn(1s);
+
+      margin: 0 10px 0 10px;
+      margin-bottom: 40px;
+      text-align: justify;
+      width: 240px;
+      padding: 20px;
+      position: relative;
+
+      .title {
+        @include setFont('Inter', 600, 20px);
+        overflow-wrap: break-word;
+        margin: 0;
+      }
+
+      .description {
+        @include setFont('Inter', 400, 16px);
+        margin-top: 10px;
+        margin-bottom: 32px;
+        display: block;
+        max-width: 240px;
+        overflow-wrap: break-word;
+      }
+
+      button {
+        border: 0;
+        background-color: transparent;
+        @include setFont('Inter', 400, 16px);
+        color: $primary-blue-100;
+
+        position: absolute;
+        right: 14px;
+        bottom: 11px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }      
+    }
+
+    .note-item-blue {
+      button {
+        color: $primary-blue-100;
+      }
+    }
+  
+    .note-item-yellow {
+      button {
+        color: $primary-yellow-100;
+      }
+    }
+  
+    .note-item-purple {
+      button {
+        color: $primary-purple-100;
+      }
+    }
+    
+  }
+
+  @media (max-width: 500px) {
+    .navbar {
+      padding: 16px 20px;
+
+      .right-content {
+        
+        .theme-action, .logout-action {
+          display: block;
+          text-align: center;
+          margin-left: 20px;
+        }
+
+        .theme-action {
+          position: relative;
+          margin-left: 0px;
+  
+          .theme-selector {
+            position: absolute;
+            top: 73px;
+          }
+        }
+      }
+    }
+
+    .add-note-card {
+  
+      div {
+        input {
+          width: 16rem;
+        }
+      }
+  
+      textarea {
+        height: 4rem;
+        width: 16rem;
+      }
+    }
+
+    .notes-list {
+      display: block;
+      padding: 40px 0;
+      margin-left: calc((100% - 280px)/2);
+    }
+  }
+}

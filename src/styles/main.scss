@@ -1,0 +1,15 @@
+// utils
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/variables";
+@import "./utils/helpers";
+
+// pages
+@import "./pages/create-account";
+@import "./pages/home";
+@import "./pages/login";
+
+body {
+    margin: 0;
+    padding: 0;
+}
