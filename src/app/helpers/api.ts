@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { User } from '../../stores/users';
 
-const BACK_END_URI = 'https://login-api-toi3.onrender.com';
+const BACK_END_URI = 'https://login-api-gvit.onrender.com';
 
 export const sendCode = async (email: string): Promise<Error | string> => {
     return (await api.post('/sendcode', { email })).data;
