@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GO_TO_CREATE_ACCOUNT_PAGE, GO_TO_HOME_PAGE } from "../../stores/page";
 import { isUserAuthenticated, isValidEmail, isValidPassword, storage } from "../helpers";
 import { State } from "../../stores/app";
-import { Icon, PasswordInput } from "../components";
+import { Footer, Icon, PasswordInput } from "../components";
 
 export const LoginPage = (): ReactElement => {
   const dispatch  = useDispatch();
@@ -69,9 +69,7 @@ export const LoginPage = (): ReactElement => {
           <Icon iconSelector="login"/>
         </div>
         <div className="bottom-content footer">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="github"/></a>
-          <a href="https://wa.me/5571996344481" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="phone"/></a>
-          <a href="https://facebook.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="facebook"/></a>
+          <Footer />
         </div>
       </div>
       <div className="right-content">
@@ -93,9 +91,7 @@ export const LoginPage = (): ReactElement => {
           <button className="primary-button" onClick={(event) => signIn(event)}>Sign in</button>
         </form>
         <div className="footer">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="github"/></a>
-          <a href="https://wa.me/5571996344481" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="phone"/></a>
-          <a href="https://facebook.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="facebook"/></a>
+          <Footer />
         </div>
       </div>
 

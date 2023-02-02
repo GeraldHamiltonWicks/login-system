@@ -7,3 +7,4 @@ export { LogoutIcon } from './LogoutIcon';
 export { ThemeIcon } from './ThemeIcon';
 export { CreateAccountIcon } from './CreateAccountIcon'
 export { EyeIcon } from './EyeIcon';
+export { LinkedinIcon } from './Likendin_Icon';

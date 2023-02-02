@@ -16,18 +16,15 @@ const getCurrentPageFromStorage = (): Page => {
     }
 }
 
-const initialPage = getCurrentPageFromStorage();
+const initialPage = 'login';
 
 export const pageReducerFn = (state: Page = initialPage, action: any) => {
     switch(action.type) {
         case GO_TO_HOME_PAGE:
-            saveCurrentPageOnStorage('home');
             return 'home';
         case GO_TO_LOGIN_PAGE:
-            saveCurrentPageOnStorage('login');
             return 'login';
         case GO_TO_CREATE_ACCOUNT_PAGE:
-            saveCurrentPageOnStorage('createAccount');
             return 'createAccount';
         default:
             return state; 

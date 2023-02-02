@@ -5,7 +5,7 @@ import { isValidEmail, isValidPassword, removeSpacesFromString, isCodeEmpty, sen
 import { CREATE_ONE_USER } from "../../stores/users";
 import { State } from "../../stores/app";
 import { encryptPassword } from "../helpers/api";
-import { Icon, MessageModal, PasswordInput } from "../components";
+import { Footer, Icon, MessageModal, PasswordInput } from "../components";
 
 export const CreateAccountPage = (): ReactElement => {
   const dispatch  = useDispatch();
@@ -186,9 +186,7 @@ export const CreateAccountPage = (): ReactElement => {
           </div>
         </form>
         <div className="footer">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="github"/></a>
-          <a href="https://wa.me/5571996344481" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="phone"/></a>
-          <a href="https://facebook.com/" target="_blank" rel="noreferrer" className="anchor-icon"><Icon iconSelector="facebook"/></a>
+          <Footer />
         </div>
       </div>
       <div id="loading-icon" hidden={isToHideLoadingIcon}></div>

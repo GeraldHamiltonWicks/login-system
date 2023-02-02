@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { CreateAccountIcon, EyeIcon, FacebookIcon, GithubIcon, LoginIcon, LogoutIcon, PhoneIcon, ThemeIcon } from "./icons";
+import { CreateAccountIcon, EyeIcon, FacebookIcon, GithubIcon, LinkedinIcon, LoginIcon, LogoutIcon, PhoneIcon, ThemeIcon } from "./icons";
 
 export type IconSelector = 
 'create-account' |
@@ -9,7 +9,8 @@ export type IconSelector =
 'logout' |
 'phone' | 
 'theme' |
-'eye'
+'eye' |
+'linkedin'
 ;
 
 interface IconProps {
@@ -22,6 +23,7 @@ export const Icon = (props: IconProps): ReactElement => {
     { props.iconSelector === 'create-account' && <CreateAccountIcon /> }
     { props.iconSelector === 'facebook' && <FacebookIcon /> }
     { props.iconSelector === 'github' && <GithubIcon />}
+    { props.iconSelector === 'linkedin' && <LinkedinIcon /> }
     { props.iconSelector === 'login' && <LoginIcon />}
     { props.iconSelector === 'logout' && <LogoutIcon />}
     { props.iconSelector === 'phone' && <PhoneIcon />}
